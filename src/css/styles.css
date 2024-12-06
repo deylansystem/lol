@@ -38,13 +38,16 @@ ul {
 li{
     float: left;
     text-align: left;
+    color: #feffe7;
     padding: 15px;
     font-size: 10px;
-    color: #f8f9d3;
+    font-family: Uncial Antiqua, serif;
+    font-weight: 700;
 }
 
 li strong {
-    color: #c3faf0;
+    color: #8c293f;
+    font-size: 12px;
 }
 
 /* Ocultar barras de desplazamiento en navegadores basados en WebKit */
@@ -112,13 +115,14 @@ body::-webkit-scrollbar {
 }
 
 .instruction {
+    background: #03040436;
+    border-radius: 10px;
+    width: 400px;
     display: block;
     position: absolute;
-    right: 78px;
-    top: 78px;
-    width: 400px;
-    border-radius: 10px;
-    background: #03040473;
+    top: 50px;
+    right: 50px;
+    box-shadow: 0px 0px 10px 2px #e7f8fd;
 }
 
 #champions-container {
