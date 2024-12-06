@@ -1,0 +1,430 @@
+/* Estilos para las tarjetas de campeones */
+@import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap');
+
+body {
+    background: linear-gradient(89deg,
+            color(srgb 0.25 0.1 0.14),
+            #0e131a,
+            color(srgb 0.24 0.17 0.05));
+    color: #ffd864;
+    text-shadow: 2px 2px 4px #484848;
+    font-family: Uncial Antiqua, serif;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-y: auto;
+    /* Permite el scroll vertical */
+    word-wrap: break-word;
+    scrollbar-width: none;
+    /* Oculta barras en Firefox */
+}
+
+#lolLogo {
+    width: 350px;
+}
+
+h2 {
+    font-family: Uncial Antiqua, serif;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li{
+    float: left;
+    text-align: left;
+    padding: 15px;
+    font-size: 10px;
+    color: #f8f9d3;
+}
+
+li strong {
+    color: #c3faf0;
+}
+
+/* Ocultar barras de desplazamiento en navegadores basados en WebKit */
+body::-webkit-scrollbar {
+    display: none;
+}
+
+#background-video {
+    position: fixed;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Asegura que el video se escala y recorta para llenar el contenedor */
+    object-position: center;
+    /* Centra el video dentro del contenedor */
+    z-index: -1;
+    /* Coloca el video detrás de otros elementos */
+    filter: brightness(0.4);
+    /* Opcional: ajusta el brillo para mayor contraste con el contenido */
+    transform: scale(1.1);
+    /* Zoom inicial para asegurar que siempre llena la pantalla */
+    transition: transform 0.5s ease-in-out;
+    opacity: 0.4;
+}
+
+#mute-button {
+    color: #fff;
+    cursor: pointer;
+    z-index: 1;
+    background-color: #000c;
+    border: none;
+    border-radius: 10px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    display: inline-flex;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.iconsBtn {
+    width: 35px;
+    float: right;
+    padding-right: 10px;
+}
+
+#pause-button {
+    left: 200px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1;
+    background-color: #000c;
+    border: none;
+    border-radius: 10px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    display: inline-flex;
+    position: absolute;
+    top: 20px;
+}
+
+.instruction {
+    display: block;
+    position: absolute;
+    right: 78px;
+    top: 78px;
+    width: 400px;
+    border-radius: 10px;
+    background: #03040473;
+}
+
+#champions-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5em;
+    perspective: 1000px;
+    padding: 5px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    height: 478px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 20px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border: 7px solid #cccccc00;
+    /* Borde predeterminado */
+    transition: border-color 0.5s ease;
+    /* Transición suave */
+}
+
+
+
+.card-inner {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform .8s;
+    position: relative;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+
+.card.is-flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-back {
+    border-style: solid;
+    position: relative;
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(121, 82, 9, 1) 35%, #350707 100%);
+}
+
+.img-back {
+    width: 100%;
+    max-height: 50px;
+    z-index: 1;
+}
+
+.img-back img {
+    width: 95%;
+    height: 250px;
+    border-radius: 10px;
+    margin-top: 5px;
+    transform: scaleX(-1);
+}
+
+.card-details {
+    text-align: left;
+    display: block;
+    width: 95%;
+    height: 95%;
+    margin: 5px;
+    background-color: white;
+    background: linear-gradient(90deg, rgb(52, 50, 82) 0%, rgb(128, 109, 74) 35%, rgb(144, 76, 76) 100%);
+    border-radius: 10px;
+    margin-top: 150px;
+    z-index: 2;
+}
+
+.card-intro {
+    background: #ffffff4f;
+    border-radius: 30px;
+    padding: 30px;
+    width: 75%;
+    margin: auto;
+}
+
+.card-front {
+    background: linear-gradient(135deg, #333, #555);
+    z-index: 2;
+}
+
+.card-back {
+    /* background: linear-gradient(135deg, #444, #666); */
+    transform: rotateY(180deg);
+    text-align: center;
+
+}
+
+.card-title {
+    color: white !important;
+    text-transform: uppercase;
+    position: fixed;
+    display: block;
+    top: 0;
+    z-index: 3;
+}
+
+.avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.logo {
+    position: absolute;
+    margin: auto;
+    width: 190px;
+    height: 80px;
+    bottom: 10px;
+
+}
+
+.card-front h3 {
+    color: #ffd864;
+    text-shadow: 2px 2px 4px #484848;
+    font-family: Uncial Antiqua, serif;
+    font-weight: 700;
+    z-index: 3;
+    width: 100%;
+    height: 30px;
+    align-content: center;
+    align-items: center;
+    display: block;
+    position: absolute;
+    top: 30px;
+    left: -60px;
+    transform: rotate(-45deg);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(121, 82, 9, 1) 35%, rgba(147, 14, 14, 1) 100%);
+}
+
+.card-back h3 {
+    color: #ffd864;
+    text-shadow: 2px 2px 4px #484848;
+    font-family: Uncial Antiqua, serif;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.card-back p {
+    color: #ffffff;
+    text-shadow: 2px 2px 4px #5d5022;
+    font-family: IM Fell English, serif;
+    font-weight: 700;
+    margin: 5px 0;
+    padding: 0px 5px 5px 5px;
+    font-size: 14px;
+    width: 100%;
+
+    word-wrap: break-word;
+}
+
+small {
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(121, 82, 9, 1) 35%, rgba(147, 14, 14, 1) 100%);
+    padding: 5px;
+    border-radius: 10px;
+    margin-left: 5px;
+    font-family: serif;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+}
+
+.icons-detail {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 1px;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+}
+
+span {
+    float: right;
+}
+
+.lock-button {
+    display: block;
+    position: absolute;
+    width: 50px;
+    top: 0;
+    right: 0;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    text-transform: uppercase;
+
+}
+
+.lock-button img {
+    width: 50px;
+}
+
+/* Mejoras de accesibilidad */
+.card:focus-visible {
+    outline: 3px solid rgba(255, 255, 255, 0.5);
+    outline-offset: 4px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    #champions-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .card {
+        height: 300px;
+    }
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+    /* Añade perspectiva 3D */
+}
+
+#lolLogo {
+    transition: all 0.3s ease;
+    transform-origin: center;
+    /* Gira sobre su centro */
+}
+
+@keyframes fast-spin {
+    from {
+        transform: rotateY(0deg) scale(1.2);
+        /* Escala para resaltar */
+    }
+
+    to {
+        transform: rotateY(360deg) scale(1);
+    }
+}
+
+@keyframes medium-spin {
+    from {
+        transform: rotateY(0deg);
+    }
+
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+@keyframes slow-spin {
+    from {
+        transform: rotateY(0deg);
+    }
+
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+.giro-rapido {
+    animation: fast-spin 0.5s linear;
+    transform-style: preserve-3d;
+    /* Mantén el efecto 3D */
+}
+
+.giro-medio {
+    animation: medium-spin 1s linear;
+    transform-style: preserve-3d;
+}
+
+.giro-lento {
+    animation: slow-spin 1.5s linear;
+    transform-style: preserve-3d;
+}
+
+footer {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    right: 0;
+    background: #00000085;
+}
