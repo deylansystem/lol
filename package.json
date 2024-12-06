@@ -1,11 +1,11 @@
 {
   "name": "league-api",
   "version": "1.0.0",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel src/index.html",
-    "build": "parcel build src/index.html"
+    "start": "parcel serve -d dist src/index.html",
+    "build": "parcel build --dist-dir build --public-url /javaspotify/ src/index.html",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "",
@@ -14,5 +14,8 @@
   "dependencies": {
     "parcel": "^2.13.2"
   },
-  "homepage": "./"
+  "homepage": "./",
+  "devDependencies": {
+    "gh-pages": "^6.2.0"
+  }
 }
