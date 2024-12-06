@@ -1,5 +1,7 @@
 node_modules/
 # Ignorar la carpeta parcel-cache
 .parcel-cache/
+# Ignorar la carpeta parcel-cache
+.parcel-cache/
 
 
