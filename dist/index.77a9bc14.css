@@ -21,24 +21,6 @@ h2 {
   font-family: Uncial Antiqua, serif;
 }
 
-ul {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-
-li {
-  float: left;
-  text-align: left;
-  color: #f8f9d3;
-  padding: 15px;
-  font-size: 10px;
-}
-
-li strong {
-  color: #c3faf0;
-}
-
 body::-webkit-scrollbar {
   display: none;
 }
@@ -62,7 +44,7 @@ body::-webkit-scrollbar {
   color: #fff;
   cursor: pointer;
   z-index: 1;
-  background-color: #000c;
+  background-color: #00000063;
   border: none;
   border-radius: 10px;
   justify-content: space-between;
@@ -84,7 +66,7 @@ body::-webkit-scrollbar {
   color: #fff;
   cursor: pointer;
   z-index: 1;
-  background-color: #000c;
+  background-color: #00000063;
   border: none;
   border-radius: 10px;
   justify-content: space-between;
@@ -96,22 +78,14 @@ body::-webkit-scrollbar {
   left: 200px;
 }
 
-.instruction {
-  background: #03040473;
-  border-radius: 10px;
-  width: 400px;
-  display: block;
-  position: absolute;
-  top: 78px;
-  right: 78px;
-}
-
 #champions-container {
   perspective: 1000px;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  justify-content: space-evenly;
+  justify-items: center;
   gap: 1.5em;
   margin: 0 auto;
-  padding: 5px;
+  padding: 10px;
   display: grid;
   overflow: hidden;
 }
@@ -195,6 +169,7 @@ body::-webkit-scrollbar {
   width: 75%;
   margin: auto;
   padding: 30px;
+  box-shadow: inset 0 0 40px 2px #350908, 0 0 10px #b4f8fb;
 }
 
 .card-front {
@@ -205,6 +180,7 @@ body::-webkit-scrollbar {
 .card-back {
   text-align: center;
   transform: rotateY(180deg);
+  border: none !important;
 }
 
 .card-title {
@@ -336,6 +312,7 @@ header {
 
 #lolLogo {
   transform-origin: center;
+  filter: drop-shadow(0 4px 6px);
   transition: all .3s;
 }
 

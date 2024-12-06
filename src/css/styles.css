@@ -1,6 +1,7 @@
 /* Estilos para las tarjetas de campeones */
 @import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap');
+ 
 
 body {
     background: linear-gradient(89deg,
@@ -20,6 +21,7 @@ body {
     scrollbar-width: none;
     /* Oculta barras en Firefox */
 }
+
 
 #lolLogo {
     width: 350px;
@@ -59,7 +61,7 @@ body::-webkit-scrollbar {
     color: #fff;
     cursor: pointer;
     z-index: 1;
-    background-color: #000c;
+    background-color: #00000063;
     border: none;
     border-radius: 10px;
     justify-content: space-between;
@@ -82,7 +84,7 @@ body::-webkit-scrollbar {
     color: #fff;
     cursor: pointer;
     z-index: 1;
-    background-color: #000c;
+    background-color: #00000063;
     border: none;
     border-radius: 10px;
     justify-content: space-between;
@@ -98,9 +100,11 @@ body::-webkit-scrollbar {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1.5em;
     perspective: 1000px;
-    padding: 5px;
+    padding: 10px;
     margin: 0 auto;
     overflow: hidden;
+    justify-items: center;
+    justify-content: space-evenly;
 }
 
 .card {
@@ -191,6 +195,7 @@ body::-webkit-scrollbar {
     padding: 30px;
     width: 75%;
     margin: auto;
+    box-shadow: inset 0 0 40px 2px #350908, 0 0 10px #b4f8fb;
 }
 
 .card-front {
@@ -202,6 +207,8 @@ body::-webkit-scrollbar {
     /* background: linear-gradient(135deg, #444, #666); */
     transform: rotateY(180deg);
     text-align: center;
+
+    border: none !important;
 
 }
 
@@ -341,6 +348,7 @@ header {
 #lolLogo {
     transition: all 0.3s ease;
     transform-origin: center;
+    filter:drop-shadow(0px 4px 6px);
     /* Gira sobre su centro */
 }
 
